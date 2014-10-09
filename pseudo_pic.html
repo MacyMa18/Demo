@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>使用伪类实现图形效果</title>
+	<style type="text/css">
+	h3 {
+		text-align: center;
+	}
+	/*八卦图*/
+	.eight_diagrams {
+		position: relative;
+		width: 192px;
+		height: 96px;
+		margin: 0 auto;
+		border-radius: 100%;
+		border-width: 4px 4px 100px 4px;
+		border-style: solid;
+		border-color: #000;
+		background-color: #fff;
+	}
+	.eight_diagrams:before {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 24px;
+		height: 24px;
+		content: '';
+		border: 36px solid #000;
+		border-radius: 100%;
+		background-color: #fff
+	}
+	.eight_diagrams:after {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		width: 24px;
+		height: 24px;
+		content: '';
+		border: 36px solid #fff;
+		border-radius: 100%;
+		background-color: #000;
+
+	}
+	/*心形*/
+	.heart {
+		position: relative;
+		width: 100px;
+		height: 90px;
+		margin: 0 auto;
+	}
+	.heart:before,
+	.heart:after {
+		position: absolute;
+		top: 0;
+		left: 50px;
+		width: 50px;
+		height: 80px;
+		content: '';
+		-moz-border-radius: 50px 50px 0 0;
+		border-radius: 50px 50px 0 0;
+		background-color: red;
+		-webkit-transform: rotate(-45deg);
+	       -moz-transform: rotate(-45deg);
+	        -ms-transform: rotate(-45deg);
+	         -o-transform: rotate(-45deg);
+	            transform: rotate(-45deg);
+	    -webkit-transform-origin: 0 100%;
+	       -moz-transform-origin: 0 100%;
+	        -ms-transform-origin: 0 100%;
+	         -o-transform-origin: 0 100%;
+	            transform-origin: 0 100%;
+	}
+	.heart:after {
+		left: 0;
+		-webkit-transform: rotate(45deg);
+	       -moz-transform: rotate(45deg);
+	        -ms-transform: rotate(45deg);
+	         -o-transform: rotate(45deg);
+	            transform: rotate(45deg);
+		-webkit-transform-origin: 100% 100%;
+	       -moz-transform-origin: 100% 100%;
+	        -ms-transform-origin: 100% 100%;
+	         -o-transform-origin: 100% 100%;
+	            transform-origin :100% 100%;
+	}
+	/*五角星*/
+	.star {
+	    position: relative;
+	    top: 50px;
+	    display: block;
+	    width: 0;
+	    height: 0;
+	    margin: 0 auto;
+	    color: yellow;
+	    border-right: 100px solid transparent;
+	    border-bottom: 70px  solid yellow;
+	    border-left: 100px solid transparent;
+	    -webkit-transform: rotate(35deg);
+	       -moz-transform: rotate(35deg);
+	        -ms-transform: rotate(35deg);
+	         -o-transform: rotate(35deg);
+	}
+	.star:before {
+	    position: absolute;
+	    top: -45px;
+	    left: -65px;
+	    display: block;
+	    width: 0;
+	    height: 0;
+	    content: '';
+	    border-bottom: 80px solid yellow;
+	    border-left: 30px solid transparent;
+	    border-right: 30px solid transparent;
+	    -webkit-transform: rotate(-35deg);
+	       -moz-transform: rotate(-35deg);
+	        -ms-transform: rotate(-35deg);
+	         -o-transform: rotate(-35deg);
+
+	}
+	.star:after {
+	    position: absolute;
+	    top: 3px;
+	    left: -105px;
+	    display: block;
+	    width: 0;
+	    height: 0;
+	    content: '';
+	    color: yellow;
+	    border-right: 100px solid transparent;
+	    border-bottom: 70px solid yellow;
+	    border-left: 100px solid transparent;
+	    -webkit-transform: rotate(-70deg);
+	       -moz-transform: rotate(-70deg);
+	        -ms-transform: rotate(-70deg);
+	         -o-transform: rotate(-70deg);
+	}
+	</style>
+</head>
+<body>
+	<h3>八卦图</h3>
+	<div class="eight_diagrams"></div>
+	<h3>心形</h3>
+	<div class="heart"></div>
+	<h3>五角星</h3>
+	<div class="star"></div>
+</body>
+</html>
